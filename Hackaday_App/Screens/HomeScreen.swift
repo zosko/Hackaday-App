@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeScreen: UIViewController {
 
+    @IBAction func onBtnBlog(){
+        let controller : BlogsScreen = (self.storyboard?.instantiateViewController(identifier: "BlogsScreen"))!
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

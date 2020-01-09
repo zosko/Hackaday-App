@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6D1766A723C754A700AFE933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766A623C754A700AFE933 /* AppDelegate.swift */; };
 		6D1766A923C754A700AFE933 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766A823C754A700AFE933 /* SceneDelegate.swift */; };
-		6D1766AB23C754A700AFE933 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766AA23C754A700AFE933 /* ViewController.swift */; };
+		6D1766AB23C754A700AFE933 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766AA23C754A700AFE933 /* HomeScreen.swift */; };
 		6D1766AE23C754A700AFE933 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1766AC23C754A700AFE933 /* Main.storyboard */; };
 		6D1766B023C754B000AFE933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D1766AF23C754B000AFE933 /* Assets.xcassets */; };
 		6D1766B323C754B000AFE933 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1766B123C754B000AFE933 /* LaunchScreen.storyboard */; };
+		6D1766BD23C7555000AFE933 /* BlogDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766BC23C7555000AFE933 /* BlogDetailScreen.swift */; };
+		6D1766BF23C7556900AFE933 /* BlogsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766BE23C7556900AFE933 /* BlogsScreen.swift */; };
+		6D1766C423C755D500AFE933 /* BlogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766C323C755D500AFE933 /* BlogModel.swift */; };
+		6D1766C723C75B1200AFE933 /* BlogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766C623C75B1200AFE933 /* BlogsCell.swift */; };
+		6D1766C923C75C2900AFE933 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766C823C75C2900AFE933 /* API.swift */; };
+		6D1766CC23C75FE700AFE933 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766CB23C75FE700AFE933 /* Date+Extension.swift */; };
+		6D1766CF23C76EC400AFE933 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 6D1766CE23C76EC400AFE933 /* MBProgressHUD */; };
+		6D1766D223C76FD900AFE933 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6D1766D123C76FD900AFE933 /* SDWebImage */; };
+		6D1766D423C7783A00AFE933 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1766D323C7783A00AFE933 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6D1766A323C754A700AFE933 /* Hackaday_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackaday_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1766A623C754A700AFE933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D1766A823C754A700AFE933 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6D1766AA23C754A700AFE933 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D1766AA23C754A700AFE933 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		6D1766AD23C754A700AFE933 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D1766AF23C754B000AFE933 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D1766B223C754B000AFE933 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D1766B423C754B000AFE933 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D1766BC23C7555000AFE933 /* BlogDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailScreen.swift; sourceTree = "<group>"; };
+		6D1766BE23C7556900AFE933 /* BlogsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsScreen.swift; sourceTree = "<group>"; };
+		6D1766C323C755D500AFE933 /* BlogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogModel.swift; sourceTree = "<group>"; };
+		6D1766C623C75B1200AFE933 /* BlogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsCell.swift; sourceTree = "<group>"; };
+		6D1766C823C75C2900AFE933 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6D1766CB23C75FE700AFE933 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		6D1766D323C7783A00AFE933 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D1766D223C76FD900AFE933 /* SDWebImage in Frameworks */,
+				6D1766CF23C76EC400AFE933 /* MBProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +74,62 @@
 		6D1766A523C754A700AFE933 /* Hackaday_App */ = {
 			isa = PBXGroup;
 			children = (
+				6D1766BA23C754B700AFE933 /* Framework */,
+				6D1766BB23C754BD00AFE933 /* Screens */,
 				6D1766A623C754A700AFE933 /* AppDelegate.swift */,
 				6D1766A823C754A700AFE933 /* SceneDelegate.swift */,
-				6D1766AA23C754A700AFE933 /* ViewController.swift */,
 				6D1766AC23C754A700AFE933 /* Main.storyboard */,
 				6D1766AF23C754B000AFE933 /* Assets.xcassets */,
 				6D1766B123C754B000AFE933 /* LaunchScreen.storyboard */,
 				6D1766B423C754B000AFE933 /* Info.plist */,
 			);
 			path = Hackaday_App;
+			sourceTree = "<group>";
+		};
+		6D1766BA23C754B700AFE933 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				6D1766C823C75C2900AFE933 /* API.swift */,
+				6D1766CA23C75E1100AFE933 /* Extensions */,
+				6D1766C223C755BE00AFE933 /* Models */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		6D1766BB23C754BD00AFE933 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				6D1766C523C75AF900AFE933 /* Cells */,
+				6D1766AA23C754A700AFE933 /* HomeScreen.swift */,
+				6D1766BE23C7556900AFE933 /* BlogsScreen.swift */,
+				6D1766BC23C7555000AFE933 /* BlogDetailScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		6D1766C223C755BE00AFE933 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D1766C323C755D500AFE933 /* BlogModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6D1766C523C75AF900AFE933 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6D1766C623C75B1200AFE933 /* BlogsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6D1766CA23C75E1100AFE933 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6D1766CB23C75FE700AFE933 /* Date+Extension.swift */,
+				6D1766D323C7783A00AFE933 /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +148,10 @@
 			dependencies = (
 			);
 			name = Hackaday_App;
+			packageProductDependencies = (
+				6D1766CE23C76EC400AFE933 /* MBProgressHUD */,
+				6D1766D123C76FD900AFE933 /* SDWebImage */,
+			);
 			productName = Hackaday_App;
 			productReference = 6D1766A323C754A700AFE933 /* Hackaday_App.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +180,10 @@
 				Base,
 			);
 			mainGroup = 6D17669A23C754A700AFE933;
+			packageReferences = (
+				6D1766CD23C76EC400AFE933 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				6D1766D023C76FD900AFE933 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 6D1766A423C754A700AFE933 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +211,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D1766AB23C754A700AFE933 /* ViewController.swift in Sources */,
+				6D1766AB23C754A700AFE933 /* HomeScreen.swift in Sources */,
+				6D1766C723C75B1200AFE933 /* BlogsCell.swift in Sources */,
+				6D1766C423C755D500AFE933 /* BlogModel.swift in Sources */,
 				6D1766A723C754A700AFE933 /* AppDelegate.swift in Sources */,
+				6D1766BD23C7555000AFE933 /* BlogDetailScreen.swift in Sources */,
 				6D1766A923C754A700AFE933 /* SceneDelegate.swift in Sources */,
+				6D1766C923C75C2900AFE933 /* API.swift in Sources */,
+				6D1766BF23C7556900AFE933 /* BlogsScreen.swift in Sources */,
+				6D1766D423C7783A00AFE933 /* String+Extension.swift in Sources */,
+				6D1766CC23C75FE700AFE933 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +418,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6D1766CD23C76EC400AFE933 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		6D1766D023C76FD900AFE933 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6D1766CE23C76EC400AFE933 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D1766CD23C76EC400AFE933 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+		6D1766D123C76FD900AFE933 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D1766D023C76FD900AFE933 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6D17669B23C754A700AFE933 /* Project object */;
 }

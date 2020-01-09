@@ -1,24 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eo9-b1-omY">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="KWi-Lf-nRK">
+            <objects>
+                <navigationController id="eo9-b1-omY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="yJ1-fi-F4W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hVZ-e7-u48"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gpk-lM-BDW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1023" y="98"/>
+        </scene>
+        <!--Home Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeScreen" customModule="Hackaday_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fK-tC-RD1">
+                                <rect key="frame" x="107" y="104" width="183" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Blog"/>
+                                <connections>
+                                    <action selector="onBtnBlog" destination="BYZ-38-t0r" eventType="touchUpInside" id="TyL-cu-1sk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0Ya-Ih-ieX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-161" y="99"/>
+        </scene>
+        <!--Blog-->
+        <scene sceneID="OS9-5c-tLY">
+            <objects>
+                <viewController storyboardIdentifier="BlogsScreen" title="Blog" id="HBp-ga-meI" customClass="BlogsScreen" customModule="Hackaday_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3q4-l2-SPd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="270" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UOi-ED-OxM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BlogsCell" rowHeight="270" id="foV-Pb-Y64" customClass="BlogsCell" customModule="Hackaday_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="270"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="foV-Pb-Y64" id="c9H-NW-Zzd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esN-Rg-R8f">
+                                                    <rect key="frame" x="0.0" y="0.0" width="185" height="115"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="185" id="nd8-7A-179"/>
+                                                        <constraint firstAttribute="height" constant="115" id="wGt-NJ-B1i"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spyware Discovered on All Samsung Phones Spyware Discovered on All " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-eF-szV">
+                                                    <rect key="frame" x="187" y="0.0" width="225" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="tKB-yc-v5N"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHu-X0-Gxk">
+                                                    <rect key="frame" x="2" y="115" width="410" height="150"/>
+                                                    <string key="text">Spyware Discovered on All Samsung Phones Spyware Discovered on All Samsung Phones dasdasd  dasdad Spyware Discovered on All Samsung Phones Spyware Discovered on All Samsung Phones dasdasd  dasdad Spyware Discovered on All Samsung Phones Spyware Discovered on All Samsung Phones dasdasd  dasdad Spyware Discovered All Samsung Phones dasdasd  dasdad Spyware Discovered on All Samsung Phones Spyware Discovered on All Samsung Phones dasdasd  dasdad Spyware Discovered </string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 9, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1T-5q-r9n">
+                                                    <rect key="frame" x="187" y="90" width="225" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="RF8-vg-hr9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="esN-Rg-R8f" firstAttribute="leading" secondItem="c9H-NW-Zzd" secondAttribute="leading" id="2GX-jt-fCR"/>
+                                                <constraint firstAttribute="trailing" secondItem="qMd-eF-szV" secondAttribute="trailing" constant="2" id="AiD-aF-b2U"/>
+                                                <constraint firstAttribute="trailing" secondItem="j1T-5q-r9n" secondAttribute="trailing" constant="2" id="K9l-s1-qdS"/>
+                                                <constraint firstItem="qMd-eF-szV" firstAttribute="leading" secondItem="esN-Rg-R8f" secondAttribute="trailing" constant="2" id="Pee-2J-ZKd"/>
+                                                <constraint firstItem="qMd-eF-szV" firstAttribute="top" secondItem="c9H-NW-Zzd" secondAttribute="top" id="RCP-uc-bE1"/>
+                                                <constraint firstItem="esN-Rg-R8f" firstAttribute="top" secondItem="c9H-NW-Zzd" secondAttribute="top" id="Vl3-US-Jbm"/>
+                                                <constraint firstItem="j1T-5q-r9n" firstAttribute="top" secondItem="qMd-eF-szV" secondAttribute="bottom" id="XbO-AR-iCd"/>
+                                                <constraint firstItem="HHu-X0-Gxk" firstAttribute="leading" secondItem="c9H-NW-Zzd" secondAttribute="leading" constant="2" id="cg1-HA-kxk"/>
+                                                <constraint firstAttribute="trailing" secondItem="HHu-X0-Gxk" secondAttribute="trailing" constant="2" id="dFi-TL-1uC"/>
+                                                <constraint firstItem="HHu-X0-Gxk" firstAttribute="top" secondItem="esN-Rg-R8f" secondAttribute="bottom" id="jUr-uc-oKe"/>
+                                                <constraint firstAttribute="bottom" secondItem="HHu-X0-Gxk" secondAttribute="bottom" constant="5" id="oqT-ri-7mR"/>
+                                                <constraint firstItem="j1T-5q-r9n" firstAttribute="leading" secondItem="esN-Rg-R8f" secondAttribute="trailing" constant="2" id="rq8-Cd-bRp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="imgImage" destination="esN-Rg-R8f" id="gvv-Zi-CPs"/>
+                                            <outlet property="lblDate" destination="j1T-5q-r9n" id="YBD-XW-6tl"/>
+                                            <outlet property="lblIntro" destination="HHu-X0-Gxk" id="RGI-fq-aeR"/>
+                                            <outlet property="lblTitle" destination="qMd-eF-szV" id="GVL-Zu-4uz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HBp-ga-meI" id="jfD-9f-fag"/>
+                                    <outlet property="delegate" destination="HBp-ga-meI" id="5ZS-bW-ulr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UOi-ED-OxM" firstAttribute="trailing" secondItem="InT-bQ-Hr0" secondAttribute="trailing" id="CEf-cQ-AIB"/>
+                            <constraint firstItem="UOi-ED-OxM" firstAttribute="top" secondItem="3q4-l2-SPd" secondAttribute="top" id="HXM-hH-2oy"/>
+                            <constraint firstAttribute="bottom" secondItem="UOi-ED-OxM" secondAttribute="bottom" id="aPd-fF-KDe"/>
+                            <constraint firstItem="UOi-ED-OxM" firstAttribute="leading" secondItem="InT-bQ-Hr0" secondAttribute="leading" id="vLc-OA-64z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="InT-bQ-Hr0"/>
+                    </view>
+                    <connections>
+                        <outlet property="tblBlog" destination="UOi-ED-OxM" id="J8L-JR-iRm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTd-Yu-8aS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556.52173913043487" y="98.4375"/>
         </scene>
     </scenes>
 </document>
