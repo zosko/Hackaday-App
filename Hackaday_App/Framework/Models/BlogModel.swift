@@ -17,6 +17,7 @@ class BlogModel: NSObject {
     var content : String = ""
     var intro : String = ""
     var image : URL?
+    var author : AuthorModel?
     
     func initBlogModel(jsonData : [String:Any] ) -> BlogModel{
         self.id = jsonData["id"] as! Int
@@ -32,6 +33,10 @@ class BlogModel: NSObject {
         
         helperJSON = jsonData["excerpt"] as! [String:Any]
         self.intro = helperJSON["rendered"] as! String
+        
+        API().getAuthor(author: jsonData["author"] as! Int) { (jsonDataAuthor) in
+            self.author = AuthorModel().initAuthorModel(jsonData: jsonDataAuthor as! [String:Any])
+        }
         
         return self
     }

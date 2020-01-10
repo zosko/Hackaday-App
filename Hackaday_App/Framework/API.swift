@@ -12,6 +12,9 @@ public typealias SuccessAPI = ((Any) -> ())
 
 class API: NSObject {
     //  POSTS DETAILS   /wp/v2/posts/[ID]
+    
+    //  PAGES   /wp/v2/pages
+    
     func get(url:String, success: @escaping SuccessAPI){
         let url = URL(string: "https://hackaday.com/wp-json" + url)!
         let session = URLSession.shared
@@ -27,8 +30,13 @@ class API: NSObject {
         task.resume()
     }
     
-    func getPosts(success: @escaping SuccessAPI){
-        get(url: "/wp/v2/posts") { (jsonData) in
+    func getPosts(page: Int, success: @escaping SuccessAPI){
+        get(url: "/wp/v2/posts?page=\(page)") { (jsonData) in
+            success(jsonData)
+        }
+    }
+    func getAuthor(author: Int, success: @escaping SuccessAPI){
+        get(url: "/wp/v2/users/\(author)") { (jsonData) in
             success(jsonData)
         }
     }
