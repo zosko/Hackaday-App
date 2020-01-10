@@ -40,4 +40,10 @@ class API: NSObject {
             success(jsonData)
         }
     }
+    
+    func getAllMedia(postID: Int, success: @escaping SuccessAPI){
+        get(url: "/wp/v2/media?parent=\(postID)") { (jsonData) in
+            success(jsonData)
+        }
+    }
 }

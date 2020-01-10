@@ -9,10 +9,10 @@
 import UIKit
 
 extension UILabel {
-    func makeYellowText(text: String) {
-        let fullString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: self.font!])
+    func makeYellowText(fullText: String, toBeYellow:String) {
+        let fullString = NSMutableAttributedString(string: fullText, attributes: [NSAttributedString.Key.font: self.font!])
         let yellowText: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.systemYellow]
-        let range = (text as NSString).range(of: "…read more\n")
+        let range = (fullText as NSString).range(of: toBeYellow)
         fullString.addAttributes(yellowText, range: range)
         self.attributedText = fullString
     }

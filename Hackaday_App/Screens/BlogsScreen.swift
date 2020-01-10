@@ -47,9 +47,9 @@ class BlogsScreen: UIViewController,UITableViewDelegate,UITableViewDataSource{
         let blogModel : BlogModel = arrBlogs[indexPath.row]
         
         cell.lblTitle.text = blogModel.title.withoutHtml;
-        cell.lblIntro.makeYellowText(text: blogModel.intro.withoutHtml)
+        cell.lblIntro.makeYellowText(fullText: blogModel.intro.withoutHtml, toBeYellow: "…read more\n")
         cell.imgImage.sd_setImage(with: blogModel.image, completed: nil)
-        cell.lblDate.text = (blogModel.author?.name ?? "") + " | " + Date().formattedDate(dateInput: blogModel.date)
+        cell.lblDate.makeYellowText(fullText: "By " + (blogModel.author?.name ?? "") + " | " + Date().formattedDate(dateInput: blogModel.date), toBeYellow: blogModel.author?.name ?? "")
         
         return cell
     }

@@ -18,6 +18,7 @@ class BlogModel: NSObject {
     var intro : String = ""
     var image : URL?
     var author : AuthorModel?
+    var media : [MediaModel] = []
     
     func initBlogModel(jsonData : [String:Any] ) -> BlogModel{
         self.id = jsonData["id"] as! Int
@@ -36,6 +37,12 @@ class BlogModel: NSObject {
         
         API().getAuthor(author: jsonData["author"] as! Int) { (jsonDataAuthor) in
             self.author = AuthorModel().initAuthorModel(jsonData: jsonDataAuthor as! [String:Any])
+        }
+        
+        API().getAllMedia(postID: jsonData["id"] as! Int) { (jsonDataMedia) in
+            for media in jsonDataMedia as! [Any]{
+                self.media.append(MediaModel().initMediaModel(jsonData: media as! Dictionary))
+            }
         }
         
         return self
