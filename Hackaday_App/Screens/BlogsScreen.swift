@@ -28,10 +28,8 @@ class BlogsScreen: UIViewController,UITableViewDelegate,UITableViewDataSource{
                 self.arrBlogs.append(BlogModel().initBlogModel(jsonData: post as! Dictionary))
             }
             OperationQueue.main.addOperation {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.tblBlog.reloadData()
-                }
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.tblBlog.reloadData()
             }
         })
     }
@@ -74,6 +72,17 @@ class BlogsScreen: UIViewController,UITableViewDelegate,UITableViewDataSource{
         super.viewDidLoad()
         
         getPosts()
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "AuthorRefresh"), object: nil, queue: .main) { (notification) in
+            let post_id = notification.userInfo?["post_id"] as! Int
+            
+            for post in self.arrBlogs{
+                if(post.id == post_id){
+                    let index = self.arrBlogs.firstIndex(where: {$0 == post})!
+                    self.tblBlog.reloadRows(at: [(NSIndexPath.init(row: index, section: 0) as IndexPath)], with: .fade)
+                }
+            }
+        } 
     }
 
     

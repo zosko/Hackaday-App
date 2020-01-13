@@ -24,7 +24,9 @@ class BlogModel: NSObject {
         self.id = jsonData["id"] as! Int
         self.date = Date().formattedToDate(stringDate: jsonData["date"] as! String)
         self.link = jsonData["link"] as! String
-        self.image = URL(string: jsonData["jetpack_featured_media_url"] as! String)!
+        
+        let imageLink = jsonData["jetpack_featured_media_url"] as! String
+        self.image = URL(string: imageLink + "?w=150")!
         
         var helperJSON = jsonData["title"] as! [String:Any]
         self.title = helperJSON["rendered"] as! String
@@ -37,6 +39,7 @@ class BlogModel: NSObject {
         
         API().getAuthor(author: jsonData["author"] as! Int) { (jsonDataAuthor) in
             self.author = AuthorModel().initAuthorModel(jsonData: jsonDataAuthor as! [String:Any])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AuthorRefresh"), object: nil, userInfo: ["post_id":self.id])
         }
         
         API().getAllMedia(postID: jsonData["id"] as! Int) { (jsonDataMedia) in

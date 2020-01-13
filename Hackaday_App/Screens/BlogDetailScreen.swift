@@ -10,36 +10,46 @@ import UIKit
 
 class BlogDetailScreen: UIViewController {
 
-    @IBOutlet var lblContent : UITextView!
+    @IBOutlet var lblTitle : UILabel!
+    @IBOutlet var lblContent : UILabel!
     @IBOutlet var lblAuthor : UILabel!
     @IBOutlet var lblDate : UILabel!
     @IBOutlet var scrollImages : UIScrollView!
+
+    @IBOutlet var headerTable : UIView!
     
     var modelBlog : BlogModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lblTitle.text = modelBlog.title
         lblContent.text = modelBlog.content.withoutHtml
-        lblAuthor.makeYellowText(fullText: "By " + (modelBlog.author?.name ?? ""), toBeYellow: modelBlog.author?.name ?? "")
+        lblContent.numberOfLines = lblContent.calculateMaxLines() + 5
+        lblAuthor.makeYellowText(fullText: "By: " + (modelBlog.author?.name ?? ""), toBeYellow: modelBlog.author?.name ?? "")
         lblDate.text = Date().formattedDate(dateInput: modelBlog.date)
         
-        for modelMedia in modelBlog.media{
-            let index = modelBlog.media.firstIndex(where: {$0 == modelMedia})!
-            
-            let xPos = CGFloat(index) * scrollImages!.frame.width
-            
-            let imgMedia : UIImageView = UIImageView()
-            imgMedia.frame = CGRect(x: xPos , y: 0, width: scrollImages!.frame.width, height: scrollImages!.frame.width)
-            imgMedia.sd_setImage(with: URL(string: modelMedia.link), completed: nil)
-            scrollImages?.addSubview(imgMedia)
-        }
+        let height = lblContent.systemLayoutSizeFitting(CGSize(width: scrollImages!.frame.width, height: UIView.layoutFittingCompressedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
+        self.headerTable.frame = CGRect(x: 0 , y: 0, width: scrollImages!.frame.width, height: height + 450)
+        
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        scrollImages.contentSize = CGSize(width: CGFloat(modelBlog.media.count) * scrollImages!.frame.width, height: scrollImages!.frame.height)
-        
-        print("width : \(scrollImages.contentSize.width)")
+        DispatchQueue.main.async {
+            
+            for modelMedia in self.modelBlog.media{
+                let index = self.modelBlog.media.firstIndex(where: {$0 == modelMedia})!
+                let xPos = CGFloat(index) * self.scrollImages!.frame.width
+                
+                let imgMedia : UIImageView = UIImageView()
+                imgMedia.frame = CGRect(x: xPos , y: 0, width: self.scrollImages!.frame.width, height: self.scrollImages!.frame.height)
+                imgMedia.sd_setImage(with: modelMedia.link, completed: nil)
+                imgMedia.contentMode = .scaleToFill
+                self.scrollImages?.addSubview(imgMedia)
+            }
+            
+            self.scrollImages.contentSize = CGSize(width: CGFloat(self.modelBlog.media.count) * self.scrollImages!.frame.width, height: 0)
+        }
     }
 }

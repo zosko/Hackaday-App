@@ -9,10 +9,11 @@
 import UIKit
 
 class MediaModel: NSObject {
-    var link : String = ""
+    var link : URL?
     
     func initMediaModel(jsonData : [String:Any] ) -> MediaModel{
-        self.link = jsonData["source_url"] as! String
+        let imageLink = jsonData["source_url"] as! String
+        self.link = URL(string: imageLink)!
         
         return self
     }
